@@ -68,6 +68,11 @@ if (logoutButton) {
 if (window.location.pathname.includes('dashboard.html')) {
     document.body.id = 'dashboard-page';
 }
+// ADICIONE ESTA LINHA:
+if (window.location.pathname.includes('trabalhos.html')) {
+    document.body.id = 'dashboard-page';
+}
+// FIM DA LINHA ADICIONADA
 if (window.location.pathname.includes('login.html')) {
     document.body.id = 'login-page';
 }
