@@ -73,7 +73,7 @@ if (path === '/' || path.startsWith('/login')) {
 }
 
 // Se estiver no dashboard OU na página de trabalhos (ou qualquer outra futura)
-if (path.startsWith('/dashboard') || path.startsWith('/trabalhos') || path.startsWith('/veiculos')) {
+if (path.startsWith('/dashboard') || path.startsWith('/trabalhos') || path.startsWith('/veiculos') || path.startsWith('/motoristas')) {
     document.body.id = 'dashboard-page';
 }
 
