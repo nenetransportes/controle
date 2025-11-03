@@ -65,16 +65,16 @@ if (logoutButton) {
 
 // --- IDENTIFICADOR DE PÁGINA ---
 // Adiciona um ID ao body para o 'checkAuth' saber em qual página está
-if (window.location.pathname.includes('dashboard.html')) {
-    document.body.id = 'dashboard-page';
-}
-// ADICIONE ESTA LINHA:
-if (window.location.pathname.includes('trabalhos.html')) {
-    document.body.id = 'dashboard-page';
-}
-// FIM DA LINHA ADICIONADA
-if (window.location.pathname.includes('login.html')) {
+const path = window.location.pathname;
+
+// Se estiver na raiz OU na página de login
+if (path === '/' || path.startsWith('/login')) {
     document.body.id = 'login-page';
+}
+
+// Se estiver no dashboard OU na página de trabalhos (ou qualquer outra futura)
+if (path.startsWith('/dashboard') || path.startsWith('/trabalhos')) {
+    document.body.id = 'dashboard-page';
 }
 
 // Roda a verificação de autenticação assim que a página carregar
