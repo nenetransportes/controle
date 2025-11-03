@@ -1,5 +1,5 @@
 // --- supabase-client.js ---
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 // 1. Cole a URL do seu projeto Supabase aqui
 const SUPABASE_URL = 'URL_DO_SEU_PROJETO_SUPABASE'; 
