@@ -29,19 +29,24 @@ async function carregarTrabalhos() {
     // Cria uma linha <tr> para cada trabalho
     data.forEach(trabalho => {
         const tr = `
-            <tr>
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">${trabalho.nome_projeto}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${trabalho.produtora_cliente}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                    ${new Date(trabalho.created_at).toLocaleDateString('pt-BR')}
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-800 text-green-100">
-                        ${trabalho.status_trabalho}
-                    </span>
-                </td>
-            </tr>
-        `;
+        <tr>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <a href="/trabalho-detalhe.html?id=${trabalho.id}" 
+                   class="text-yellow-400 hover:text-yellow-300 hover:underline">
+                    ${trabalho.nome_projeto}
+                </a>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${trabalho.produtora_cliente}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                ${new Date(trabalho.created_at).toLocaleDateString('pt-BR')}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-800 text-green-100">
+                    ${trabalho.status_trabalho}
+                </span>
+            </td>
+        </tr>
+    `;
         tableBody.innerHTML += tr;
     });
 }
